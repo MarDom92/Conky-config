@@ -1,0 +1,58 @@
+conky.config = {
+	background = true,
+    update_interval = 2,
+    cpu_avg_samples = 2,
+    net_avg_samples = 2,
+    out_to_console = false,
+    override_utf8_locale = true,
+    double_buffer = true,
+    no_buffers = true,
+    text_buffer_size = 32768,
+    imlib_cache_size = 0,
+    total_run_times = 0,
+    own_window = true,
+	own_window_type = 'desktop',
+	own_window_argb_visual = true,
+	own_window_argb_value = 220,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+    border_inner_margin = 15,
+	border_outer_margin = 0,
+    xinerama_head = 2,
+    alignment = 'top_right',
+    gap_x = 40,
+	gap_y = 555,
+    draw_shades = false,
+    draw_outline = false,
+	draw_borders = false,
+    draw_graph_borders = true,
+    use_xft = true,
+    font = 'Noto sans:size=12',
+	xftalpha = 0.9,
+    uppercase = false,
+    default_color = '#101010',
+    own_window_colour = '#000000',
+    minimum_width = 225,
+    minimum_height = 0,
+
+--colors
+	color1 = '#2196F3', --jaśniejszy niebieski tytuły
+	color2 = '#aaa', --pozioma kreska tytułu
+	color3 = '#ddd', --tekst główny
+	color4 = '#2962FF', --ciemniejszy niebieski - paski
+
+};
+
+conky.text = [[
+${color1}${font Noto sans:size=12:bold}DYSKI ${color2} ${hr 2}${color3}${font Noto Sans:size=12}
+${color3}${font Noto Sans:size=12}SSD: ${color3}${alignr}${fs_used /} / ${fs_size /}
+  ${fs_used_perc /} %${alignr}${color4}${fs_bar 10, 110 /}
+${color3}Temperatura: ${alignr} ${hddtemp /dev/sda} °C
+
+${color3}HDD: ${alignr}${fs_used /mnt/HDD_500GB} / ${fs_size /mnt/HDD_500GB} 
+  ${color3}${fs_used_perc /mnt/HDD_500GB} %${alignr}${color4}${fs_bar 10, 110 /mnt/HDD_500GB}
+${color3}Temperatura: ${alignr} ${hddtemp /dev/sdb} °C
+
+Odczyt: ${alignr}${diskio_read}
+Zapis: ${alignr}${diskio_write}
+${color4}${diskiograph}
+]];
