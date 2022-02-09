@@ -46,11 +46,11 @@ conky.text = [[
 ${color1}${font Noto sans:size=12:bold}DYSKI ${color2} ${hr 2}${color3}${font Noto Sans:size=12}
 ${color3}${font Noto Sans:size=12}SSD: ${color3}${alignr}${fs_used /} / ${fs_size /}
   ${fs_used_perc /} %${alignr}${color4}${fs_bar 10, 110 /}
-${color3}Temperatura: ${alignr} ${hddtemp /dev/sda} °C
+${color3}Temperatura: ${alignr} ${exec sensors nvme-pci-0100 | grep -E "^Composite" |sed 's/^.*://' | cut -c 6-9 | awk '{print int($1+0.5)}'} °C
 
 ${color3}HDD: ${alignr}${fs_used /mnt/HDD_500GB} / ${fs_size /mnt/HDD_500GB} 
   ${color3}${fs_used_perc /mnt/HDD_500GB} %${alignr}${color4}${fs_bar 10, 110 /mnt/HDD_500GB}
-${color3}Temperatura: ${alignr} ${hddtemp /dev/sdb} °C
+${color3}Temperatura: ${alignr} ${hddtemp /dev/sda} °C
 
 Odczyt: ${alignr}${diskio_read}
 Zapis: ${alignr}${diskio_write}
