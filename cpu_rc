@@ -59,6 +59,6 @@ ${color3}CPU10 :${alignr}${cpu cpu10} %    ${color4}${cpubar cpu10 10,110}
 ${color3}CPU11 :${alignr}${cpu cpu11} %    ${color4}${cpubar cpu11 10,110}
 ${color3}CPU12 :${alignr}${cpu cpu12} %    ${color4}${cpubar cpu12 10,110}
 
-${color3}Wentylator: ${alignr}${hwmon 1 temp 2} °C
-${color3}Wentylator: ${alignr}${hwmon 1 fan 2} RPM
+${color3}Temperatura: ${alignr}${hwmon 1 temp 1} °C
+${color3}Wentylator: ${alignr}${hwmon 2 fan 1} RPM
 ]];
