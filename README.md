@@ -2,4 +2,4 @@
 My personal setup conky
 
 ## Screenshot
-![1](https://user-images.githubusercontent.com/19759657/151858649-f177dcc3-6849-482c-a352-cab6126c95b2.jpg)
+![1](https://user-images.githubusercontent.com/19759657/153543042-833aeb29-6cdb-489a-96c0-34cb8a1fe9e9.jpg)
